@@ -1,0 +1,11 @@
+from django.shortcuts import render
+
+# Create your views here.
+
+
+def index(request , group_name):
+    print("Group name...", group_name)
+    return render(request, 'app/index.html',{'groupname':group_name})
+def firstPage(request ):
+    
+    return render(request, 'app/first.html')
