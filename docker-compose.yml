@@ -5,7 +5,7 @@ services:
     volumes:
     - .:/app1
     ports:
-    - 6379:6379
+    - 6379:8000
     image: app:app1
     container_name: my_first_django_container
     command: python manage.py runserver 0.0.0.0:8000
