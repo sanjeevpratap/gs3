@@ -12,5 +12,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+EXPOSE 6379
+
 CMD python manage.py runserver 0.0.0.0:8000
 
