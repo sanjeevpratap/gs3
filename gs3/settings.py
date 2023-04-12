@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import ssl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,15 +129,25 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # redis_host = os.environ.get('REDIS_HOST', 'localhost')
-
+ssl_context = ssl.SSLContext()
+# ssl_context.load_cert_chain(
+#     certfile="/opt/redis/certs/client.crt",
+#     keyfile="/opt/redis/certs/client.key",
+# )
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
             # "hosts": [("localhost", 6379)],
             # "hosts": ["redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com","18739"],
-            "hosts":[(os.environ.get('redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/','redis://redis:6379'))]
+            "hosts":[(os.environ.get('redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/','redis://redis:6379'))],
             
+
+            
+        },
+        "OPTIONS":{
+            "ssl_certfile":'./ca-cert',
+            "ssl_keyfile":'./ca-key',
         },
     },
 }
