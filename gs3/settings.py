@@ -146,8 +146,8 @@ CHANNEL_LAYERS = {
             
         },
         "OPTIONS":{
-            "ssl_certfile":'./ca-cert',
-            "ssl_keyfile":'./ca-key',
+            "ssl_certfile":'./server.cert',
+            "ssl_keyfile":'./server.key',
         },
     },
 }
