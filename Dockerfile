@@ -1,6 +1,6 @@
 FROM python:3.10-slim-buster
 
-ENV PYTHONBUFFERED=1
+
 
 RUN mkdir /app1
 
@@ -11,6 +11,10 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
+
+ENV DJANGO_SETTING_MODULE=gs3.setting
+
+ENV REDIS_URL=redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/
 
 EXPOSE 8000
 

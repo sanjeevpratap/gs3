@@ -5,7 +5,13 @@ services:
     volumes:
     - .:/app1
     ports:
-    - 6379:8000
-    image: app:app1
+    - 8000:8000
+    # image: app:app1
     container_name: my_first_django_container
-    command: python manage.py runserver 0.0.0.0:8000
+    command:  python manage.py runserver 0.0.0.0:8000
+    
+  redis:
+      image: "redis:alpine"
+      environment:
+      - REDIS_URL=redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/
+ 

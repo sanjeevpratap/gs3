@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#qtsf&@0=jn!&qkw57fkiu1+54nxi#06v3i@tgh(h1usyz4c$m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://234chat-sanjeevpratap99209920.b4a.run/','localhost','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -133,7 +133,19 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+            # "hosts": [("localhost", 6379)],
+            # "hosts": ["redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com","18739"],
+            "hosts":[(os.environ.get('redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/','redis://redis:6379'))]
+            
         },
     },
 }
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.pubsub.RedisPubSubChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("localhost", 6379)],
+#             # "hosts": ["redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com","18739"],
+#         },
+#     },
+# }
