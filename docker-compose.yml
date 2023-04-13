@@ -5,10 +5,10 @@ services:
     volumes:
     - .:/app1
     ports:
-    - 8001:8001
+    - 8000:8000
     # image: app:app1
     container_name: my_first_django_container
-    command:  daphne -b 127.0.0.1 -p 8001 gs3.asgi:channel_layer
+    command:  daphne -b 127.0.0.1 -p 8000 gs3.asgi:channel_layer
     
   redis:
       image: "redis:alpine"
