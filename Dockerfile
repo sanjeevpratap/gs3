@@ -23,5 +23,6 @@ ENV REDIS_URL=redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:1873
 
 EXPOSE 8000
 
-CMD  daphne -b 0.0.0.0 -p 8000 gs3.asgi:application
+CMD  sh -c redis-service & daphne -b 0.0.0.0 -p 8000 gs3.asgi:application
+# CMD  daphne -b 0.0.0.0 -p 8000 gs3.asgi:application
 
