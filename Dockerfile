@@ -1,6 +1,6 @@
 FROM python:3.10-slim-buster
 
-FROM alpine:latest
+# FROM alpine:latest
 
 RUN mkdir /app1
 
