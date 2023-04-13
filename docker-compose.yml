@@ -8,7 +8,7 @@ services:
     - 8000:8000
     # image: app:app1
     container_name: my_first_django_container
-    command:  sh -c redis-service & daphne -b 0.0.0.0 -p 8000 gs3.asgi:application
+    command:  sh -c redis-service & daphne -b 0.0.0.0 -p 8001 gs3.asgi:application
     
   redis:
       image: "redis:alpine"
