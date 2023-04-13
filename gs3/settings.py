@@ -152,12 +152,14 @@ CHANNEL_LAYERS = {
         # },
     },
 }
-# CHANNEL_LAYERS = {
-#     "default": {
-#         "BACKEND": "channels_redis.pubsub.RedisPubSubChannelLayer",
-#         "CONFIG": {
-#             "hosts": [("localhost", 6379)],
-#             # "hosts": ["redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com","18739"],
-#         },
-#     },
-# }
+
+CACHES ={
+    'default':{
+        'BACKEND':'django_redis.cache.RedisCache',
+        'LOCATION':'redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739',
+        'OPTIONS':{
+            'CLIENT_CLASS':'django_redis.client.DefaultClient',
+            'PASSWORD':'AB2KtsyhLEG6GIGlC1D3rDfC9Dlt2Xkl',
+        }
+    }
+}

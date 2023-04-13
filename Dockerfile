@@ -1,8 +1,8 @@
 FROM python:3.10-slim-buster
 
-FROM alpine:latest
+# FROM alpine:latest
 
-RUN  apk add -update redis
+# RUN  apk add -update redis
 
 
 
