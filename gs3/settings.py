@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'daphne',
+    # 'sslserver',
     'channels',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -145,10 +146,10 @@ CHANNEL_LAYERS = {
 
             
         },
-        "OPTIONS":{
-            "ssl_certfile":'./server.cert',
-            "ssl_keyfile":'./server.key',
-        },
+        # "OPTIONS":{
+        #     "ssl_certfile":'./server.cert',
+        #     "ssl_keyfile":'./server.key',
+        # },
     },
 }
 # CHANNEL_LAYERS = {
