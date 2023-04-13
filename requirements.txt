@@ -3,4 +3,5 @@ channels==4.0.0
 Django==4.0.3
 daphne==4.0.0
 channels-redis==4.0.0
-
+django-redis==5.2.0
+Twisted==22.10.0
