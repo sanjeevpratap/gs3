@@ -21,7 +21,7 @@ ENV DJANGO_SETTING_MODULE=gs3.setting
 
 ENV REDIS_URL=redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/
 
-EXPOSE 8000
+EXPOSE 8001
 
 CMD  sh -c redis-service & daphne -b 0.0.0.0 -p 8001 gs3.asgi:application
 # CMD  daphne -b 0.0.0.0 -p 8000 gs3.asgi:application
