@@ -21,8 +21,8 @@ ENV DJANGO_SETTING_MODULE=gs3.setting
 
 ENV REDIS_URL=redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/
 
-EXPOSE 8000
+EXPOSE 80
 
 # CMD   daphne -b 127.0.0.1 -p 8000 gs3.asgi:ch
-CMD  uvicorn gs3.asgi:application --host 0.0.0.0 --port 8000 --reload
+CMD  uvicorn gs3.asgi:application --host 0.0.0.0 --port 80 --reload
 
