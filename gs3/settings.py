@@ -141,7 +141,8 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             # "hosts": [("localhost", 6379)],
             # "hosts": ["redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com","18739"],
-            "hosts":[(os.environ.get('redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/','redis://redis:6379'))],
+            # "hosts":[(os.environ.get('redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/','redis://redis:6379'))],
+            "hosts":[(os.environ.get('redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:18739/','redis://localhost:6379'))],
             
 
             
