@@ -24,5 +24,5 @@ ENV REDIS_URL=redis://redis-18739.c212.ap-south-1-1.ec2.cloud.redislabs.com:1873
 EXPOSE 8001
 
 # CMD   daphne -b 127.0.0.1 -p 8000 gs3.asgi:ch
-CMD  uvicorn gs3.asgi:application --host 127.0.0.1 --port 8001 --reload
+CMD  uvicorn gs3.asgi:application --host 0.0.0.0 --port 8001 --reload
 
